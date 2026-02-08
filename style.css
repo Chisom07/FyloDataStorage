@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+
+  background-color: hsl(229, 57%, 11%);
+  background-image: url('./images/bg-desktop.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+
+.card {
+  background: hsl(228, 56%, 26%);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Left card */
+.card-left {
+  width: 320px;
+  border-top-right-radius: 100px;
+}
+.logo {
+  margin-bottom: 2rem;
+}
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+.icon {
+  background: hsl(229, 57%, 11%);
+  padding: 0.8rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right card */
+.card-right {
+  width: 500px;
+  position: relative;
+}
+.text {
+  margin-bottom: 1rem;
+  font-size: 14px;
+  color: hsl(243, 100%, 93%);
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 18px;
+  background: hsl(229, 57%, 11%);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.progress {
+  width: 81.5%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  border-radius: 10px;
+  position: relative;
+}
+.progress::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Labels */
+.labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: hsl(243, 100%, 93%);
+}
+
+/* Bubble */
+.bubble {
+  position: absolute;
+  top: -45px;
+  right: 40px;
+  background: white;
+  color: hsl(229, 57%, 11%);
+  padding: 0.7rem 1.2rem;
+  border-radius: 7px 7px 0px 7px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 0;
+  border-top: 18px solid white;
+}
+
+.big {
+  font-size: 28px;
+  font-weight: 700;
+}
+.small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4c545d;
+}
+
+/* Footer */
+.attribution {
+  position: absolute;
+  bottom: 20px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+
+@media (max-width: 768px) {
+
+  body {
+    background-color: hsl(229, 57%, 11%);
+    background-image: url('./images/bg-mobile.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  .card-left,
+  .card-right {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .card-right {
+    text-align: center;
+    padding-bottom: 3.5rem;
+  }
+
+  .progress-bar {
+    position: relative;
+  }
+
+  /* Bubble (185 GB LEFT) */
+  .bubble {
+    position: absolute;
+    padding-left: 23px;
+    border-radius: 7px 7px 7px 7px;
+    left: 50%;
+    top: 20%;
+    bottom: -20px;
+    transform: translateX(-50%);
+    z-index: 10;
+    margin: 0;
+    margin-top: 100px;
+    height: 70px;
+    width: 180px;
+  }
+  .bubble::after {
+    display: none;
+  }
+
+  .big {
+  font-size: 40px;
+  font-weight: 700;
+  }
+  .small {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #4c545d;
+  }
+}
